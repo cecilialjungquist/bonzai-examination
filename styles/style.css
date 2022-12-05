@@ -4,6 +4,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--Dark-purple);
 }
 
 :root {
@@ -34,7 +39,7 @@
     --ff-paragraph--card: 'Montserrat', sans-serif;
     --lh-paragraph--card: 110%;
 
-    /* Styling menu item */
+    /* Styling menu item & link */
     --fs-menu-item: 2.0rem;
     --ff-menu-item: 'Jura', sans-serif;
 
@@ -42,4 +47,131 @@
     --fs-btn: 2.4rem;
     --ff-btn: 'Jura', sans-serif;
     --fw-btn: 700;
+    --fs-btn--small: 2rem;
+}
+
+/* ------------- HEADER ------------- */
+
+.header {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__section,
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.landscape-logo {
+    height: 4.7rem;
+}
+
+.menu__item {
+    font-size: var(--fs-menu-item);
+    font-family: var(--ff-menu-item);
+    color: var(--Secondary-Color);
+}
+
+.menu__item--active {
+    font-weight: 500;
+}
+
+.header__btn {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.icon-arrow {
+    height: 1.2rem;
+    margin-right: 1rem;
+    transform: rotateZ(-90deg);
+}
+
+
+/* Hover effects */
+
+.menu__item:hover,
+.header__btn:hover .menu__item {
+    color: var(--Primary-color);
+    cursor: pointer;
+}
+
+.header__btn:hover {
+    cursor: pointer;
+}
+
+.header__btn:hover .search path {
+    fill: var(--Primary-color); 
+}
+
+.header__btn:hover .mypage path,
+.header__btn:hover .mypage circle {
+    stroke: var(--Primary-color); 
+}
+
+
+/* ------------- FOOTER ------------- */
+
+.footer {
+    background-color: var(--Dark-green);
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem
+}
+
+.footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.footer-logo {
+    height: 2rem;
+}
+
+.footer__btn {
+    appearance: none;
+    border: none;
+    background-color: var(--Primary-color);
+    padding: .4em .8em;
+    border-radius: 1.6rem 0 1.6rem 0;
+    color: var(--Dark-green);
+    font-size: var(--fs-btn--small);
+    font-family: var(--ff-btn);
+    transition: background-color 500ms, color 500ms;
+}
+
+/* Hover effects */
+
+.spotify:hover,
+.pinterest:hover,
+.facebook:hover {
+    cursor: pointer;
+}
+
+.spotify:hover path,
+.pinterest:hover path,
+.facebook:hover path {
+    fill: var(--Primary-color);
+}
+
+.footer__btn:hover {
+    background-color: var(--Dark-green);
+    color: var(--Secondary-Color);
 }
