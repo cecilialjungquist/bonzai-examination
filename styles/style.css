@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500&family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+
+    /* Colors */
+    --Primary-color: #54E9BC;
+    --Secondary-Color: #FFFFFF;
+    --Dark-green: #1F221E;
+    --Dark-purple: #24242E;
+    
+    /* Styling Heading 1 */
+    --fs-h1: 9.6rem;
+    --ff-h1: 'Jura', sans-serif;
+    --fw-h1: 500;
+
+    /* Styling Heading 2 */
+    --fs-h2: 3.6rem;
+    --ff-h2: 'Jura', sans-serif;
+
+    /* Styling Paragraph */
+    --fs-paragraph: 2.0rem;
+    --ff-paragraph: 'Montserrat', sans-serif;
+    --lh-paragraph: 140%;
+
+    /* Styling Paragraph for cards */
+    --fs-paragraph--card: 1.6rem;
+    --ff-paragraph--card: 'Montserrat', sans-serif;
+    --lh-paragraph--card: 110%;
+
+    /* Styling menu item */
+    --fs-menu-item: 2.0rem;
+    --ff-menu-item: 'Jura', sans-serif;
+
+    /* Styling button */
+    --fs-btn: 2.4rem;
+    --ff-btn: 'Jura', sans-serif;
+    --fw-btn: 700;
+}
