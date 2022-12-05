@@ -216,7 +216,8 @@ body {
 
 .card__section {
     background-color: var(--Dark-green);
-
+    transition: transform 500ms;
+    transform-origin: top;
     position: relative;
 }
 
@@ -238,4 +239,11 @@ body {
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+}
+
+/* Hover effects */
+
+.card:hover .card__section {
+    transform: scale(1.05);
+    cursor: pointer;
 }
