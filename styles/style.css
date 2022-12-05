@@ -6,6 +6,7 @@
     padding: 0;
     text-decoration: none;
     font-weight: 400;
+    list-style: none;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
     --ff-h2: 'Jura', sans-serif;
 
     /* Styling Paragraph */
-    --fs-paragraph: 2.0rem;
+    --fs-paragraph: 1.6rem;
     --ff-paragraph: 'Montserrat', sans-serif;
     --lh-paragraph: 140%;
 
@@ -57,6 +58,7 @@ body {
     font-family: var(--ff-h1);
     font-size: var(--fs-h1);
     color: var(--Secondary-Color);
+    font-weight: var(--fw-h1);
 }
 
 .h2 {
@@ -72,11 +74,13 @@ body {
     color: var(--Secondary-Color);
 }
 
-.p--card {
+.p--card, 
+.p--list {
     font-family: var(--ff-paragraph--card);
     font-size: var(--fs-paragraph--card);
     line-height: var(--lh-paragraph--card);
     color: var(--Secondary-Color);
+    margin: 1.5rem 0;
 }
 
 
@@ -246,4 +250,95 @@ body {
 .card:hover .card__section {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+/* ------------- ROOM ------------- */
+
+.room {
+    display: flex;
+    gap: 2rem;
+    background-color: transparent;
+}
+
+.room__section--img {
+    max-width: 56rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.room__img--big {
+    width: 100%;
+    grid-column: 1 / span 3;
+}
+
+.room__img--small {
+    width: 100%;
+    grid-column: auto / span 1;
+}
+
+.room__section--info {
+    background-color: var(--Dark-green);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.room__info {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.room__section--book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ------------- BUTTON ------------- */
+
+.button {
+    appearance: none;
+    border: none;
+    padding: 1.8rem 5rem;
+    background-color: var(--Primary-color);
+    color: var(--Dark-green);
+    font-family: var(--ff-btn);
+    font-size: var(--fs-btn);
+    font-weight: var(--fw-btn);
+    border-radius: 5rem 0 5rem 0;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.button__hover-effect {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: var(--Secondary-Color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    scale: 0;
+    opacity: 0;
+    transition: scale 1s, opacity 1s;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:hover .button__hover-effect {
+    scale: 3;
+    opacity: .9;
 }
