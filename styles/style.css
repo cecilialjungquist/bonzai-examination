@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-weight: 400;
 }
 
 body {
@@ -50,6 +51,36 @@ body {
     --fs-btn--small: 2rem;
 }
 
+/* ------------- TEXT STYLING ------------- */
+
+.h1 {
+    font-family: var(--ff-h1);
+    font-size: var(--fs-h1);
+    color: var(--Secondary-Color);
+}
+
+.h2 {
+    font-family: var(--ff-h2);
+    font-size: var(--fs-h2);
+    color: var(--Secondary-Color);
+}
+
+.p {
+    font-family: var(--ff-paragraph);
+    font-size: var(--fs-paragraph);
+    line-height: var(--lh-paragraph);
+    color: var(--Secondary-Color);
+}
+
+.p--card {
+    font-family: var(--ff-paragraph--card);
+    font-size: var(--fs-paragraph--card);
+    line-height: var(--lh-paragraph--card);
+    color: var(--Secondary-Color);
+}
+
+
+
 /* ------------- HEADER ------------- */
 
 .header {
@@ -60,7 +91,7 @@ body {
 }
 
 .header__section,
-.menu {
+.header__menu {
     display: flex;
     align-items: center;
     gap: 5vw;
@@ -174,4 +205,37 @@ body {
 .footer__btn:hover {
     background-color: var(--Dark-green);
     color: var(--Secondary-Color);
+}
+
+/* ------------- CARD ------------- */
+
+.card {
+    max-width: 32rem;
+    padding-top: 6rem;
+}
+
+.card__section {
+    background-color: var(--Dark-green);
+
+    position: relative;
+}
+
+.card__img-holder {
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    background-color: var(--Primary-color);
+    position: absolute;
+    top: -6rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.card__info {
+    padding: 26rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
 }
