@@ -77,7 +77,6 @@ body {
     font-size: var(--fs-paragraph);
     line-height: var(--lh-paragraph);
     color: var(--Secondary-Color);
-    text-align: center;
 }
 
 .p--card, 
@@ -92,13 +91,12 @@ body {
 /* ------------- WRAPPER ------------- */
 
 .wrapper {
-    padding-bottom: 3rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    gap: 4rem;
+    align-items: center;
     position: relative;
+    gap: 4rem;
     z-index: 1;
 }
 .wrapper::before {      /* To allow lower opacity of background img */
@@ -113,11 +111,6 @@ body {
     opacity: .5;
     z-index: -1;
 }
-
-.wrapper--home {
-    padding-top: 3rem;
-}
-
 
 /* ------------- HERO / HEADER ------------- */
 
@@ -190,6 +183,7 @@ body {
 
 .hero__p {
     max-width: 70rem;
+    text-align: center;
 }
 
 
@@ -216,6 +210,70 @@ body {
 
 .header__btn:hover .icon-arrow {
     transform: rotateZ(270deg);
+}
+
+/* ------------- CARD ------------- */
+
+.wrapper__section--home {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.card {
+    max-width: 32rem;
+    padding-top: 6rem;
+}
+
+.card__section {
+    background-color: var(--Dark-green);
+    transition: transform 500ms;
+    transform-origin: top;
+    position: relative;
+}
+
+.card__img-holder {
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    background-color: var(--Primary-color);  /* IF the background-img wouldn't render */
+    background-size: cover;
+    position: absolute;
+    top: -6rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.card__info {
+    padding: 26rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Modifiers for background img */
+
+.card__img-holder--our-rooms {
+    background-image: url(../images/02-night.jpg);
+}
+.card__img-holder--our-facilities {
+    background-image: url(../images/huum-NHLS5hOSH0c-unsplash.jpg);
+}
+.card__img-holder--contact-us {
+    background-image: url(../images/mathias-arlund-8o8ZK7X9gVY-unsplash.jpg);
+    background-position: center -4rem;
+}
+
+/* Hover effects */
+
+.card:hover .card__section {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* ------------- FOOTER ------------- */
@@ -283,60 +341,6 @@ body {
     cursor: pointer;
 }
 
-/* ------------- CARD ------------- */
-
-.card {
-    max-width: 32rem;
-    padding-top: 6rem;
-}
-
-.card__section {
-    background-color: var(--Dark-green);
-    transition: transform 500ms;
-    transform-origin: top;
-    position: relative;
-}
-
-.card__img-holder {
-    width: 28rem;
-    height: 28rem;
-    border-radius: 50%;
-    background-color: var(--Primary-color);  /* IF the background-img wouldn't render */
-    background-size: cover;
-    position: absolute;
-    top: -6rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.card__info {
-    padding: 26rem 2rem 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
-}
-
-/* Modifiers for background img */
-
-.card__img-holder--our-rooms {
-    background-image: url(../images/02-night.jpg);
-}
-.card__img-holder--our-facilities {
-    background-image: url(../images/huum-NHLS5hOSH0c-unsplash.jpg);
-}
-.card__img-holder--contact-us {
-    background-image: url(../images/mathias-arlund-8o8ZK7X9gVY-unsplash.jpg);
-    background-position: center -4rem;
-}
-
-/* Hover effects */
-
-.card:hover .card__section {
-    transform: scale(1.05);
-    cursor: pointer;
-}
 
 /* ------------- ROOM ------------- */
 
@@ -433,16 +437,23 @@ body {
 /* ------------- BOOKING PAGE ------------- */
 /* ------------- ************ ------------- */
 
-.hero-img {
+/* ------------- HERO ------------- */
+
+.booking-hero__img {
     width: 100%;
     max-height: 30rem;
     object-fit: cover;
     object-position: top;
 }
 
-.hero--booking {
-    padding: 1.2rem;
-    background-size: 100%;
+.wrapper__section--booking {
+    padding: 3rem 1.2rem;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
 }
 
 /* ------------- FORM ------------- */
@@ -495,11 +506,6 @@ body {
     width: 5rem;
 }
 
-.form__button {
-    font-size: 1.6rem;
-    min-width: 20rem;
-}
-
 .form__input:focus {
     outline: none;
     border-bottom: 1px solid var(--Primary-color);
@@ -541,10 +547,11 @@ body {
         flex-direction: column;
     }
 
-    /* Booking */
-    .h1--text-align,
-    .p--text-align {
-        text-align: left;
+    /* Booking page */
+
+    .wrapper__section--booking {
+        align-items: flex-start;
+        min-height: 80vh;
     }
 
     .form {

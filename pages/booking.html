@@ -47,36 +47,35 @@
             </nav>
         </section>
     </header>
+    <!-- HERO -->
+    <div class="booking-hero">
+        <img class="booking-hero__img" src="../images/waranont-joe-acJmkKwEMR4-unsplash.jpg" alt="Picture of landscape.">
+    </div>
     <main class="wrapper">
-        <!-- HERO -->
-        <img class="hero-img" src="..//images/waranont-joe-acJmkKwEMR4-unsplash.jpg" alt="Picture of landscape.">
-        <div class="hero--booking">
-            <section class="hero__section">
-                <h1 class="h1 h1--text-align">Booking</h1>
-            </section>
-        </div>
-        <!-- FORM -->
-        <form class="form">
-            <section class="form__section form__section--big">
-                <label class="form__label" for="check-in ">Check in</label>
-                <input class="form__input" type="date" name="date" id="check-in">
-            </section>
-            <section class="form__section form__section--big">
-                <label class="form__label" for="check-out">Check out</label>
-                <input class="form__input" type="date" name="date" id="check-out">
-            </section>
-            <section class="form__section form__section--small">
-                <label class="form__label" for="guests">Guests</label>
-                <input class="form__input form__input--number" type="number" name="number" id="guests" value="1" max="6">
-            </section>
-            <section class="form__section form__section--small">
-                <label class="form__label" for="rooms">Rooms</label>
-                <input class="form__input form__input--number" type="number" name="number" id="rooms" value="1" max="4">
-            </section>
-            <!-- BUTTON -->
-            <button class="button form__button" onclick="document.location='rooms.html'">Search<div class="button__hover-effect"></div></button>
-        </form>
-
+        <section class="wrapper__section--booking">
+            <h1 class="h1">Booking</h1>
+            <!-- FORM -->
+            <form class="form">
+                <section class="form__section form__section--big">
+                    <label class="form__label" for="check-in ">Check in</label>
+                    <input class="form__input" type="date" name="date" id="check-in">
+                </section>
+                <section class="form__section form__section--big">
+                    <label class="form__label" for="check-out">Check out</label>
+                    <input class="form__input" type="date" name="date" id="check-out">
+                </section>
+                <section class="form__section form__section--small">
+                    <label class="form__label" for="guests">Guests</label>
+                    <input class="form__input form__input--number" type="number" name="number" id="guests" value="1" max="6">
+                </section>
+                <section class="form__section form__section--small">
+                    <label class="form__label" for="rooms">Rooms</label>
+                    <input class="form__input form__input--number" type="number" name="number" id="rooms" value="1" max="4">
+                </section>
+                <!-- BUTTON -->
+                <button class="button" onclick="document.location='rooms.html'">Search<div class="button__hover-effect"></div></button>
+            </form>
+        </section>
     </main>
     <!-- FOOTER -->
     <footer class="footer">
