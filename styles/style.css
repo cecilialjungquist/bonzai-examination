@@ -341,55 +341,6 @@ body {
     cursor: pointer;
 }
 
-
-/* ------------- ROOM ------------- */
-
-.room {
-    display: flex;
-    gap: 2rem;
-    background-color: transparent;
-}
-
-.room__section--img {
-    max-width: 56rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.room__img--big {
-    width: 100%;
-    grid-column: 1 / span 3;
-}
-
-.room__img--small {
-    width: 100%;
-    grid-column: auto / span 1;
-}
-
-.room__section--info {
-    background-color: var(--Dark-green);
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.room__info {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.room__section--book {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
 /* ------------- BUTTON ------------- */
 
 .button {
@@ -447,7 +398,7 @@ body {
 }
 
 .wrapper__section--booking {
-    padding: 3rem 1.2rem;
+    padding: 3rem 1.2rem 6rem;
     max-width: 70rem;
     display: flex;
     flex-direction: column;
@@ -511,7 +462,80 @@ body {
     border-bottom: 1px solid var(--Primary-color);
 }
 
-/* ------------- MEDIA QUERIES ------------- */
+
+/* ------------- ************ ------------- */
+/* -------------  ROOMS PAGE  ------------- */
+/* ------------- ************ ------------- */
+
+.wrapper__section--rooms {
+    padding: 3rem 1.2rem 6rem;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* ------------- ROOM ------------- */
+
+.room {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.room__section--img {
+    max-width: 56rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.room__img--big {
+    width: 100%;
+    grid-column: 1 / span 3;
+}
+
+.room__img--small {
+    width: 100%;
+    grid-column: auto / span 1;
+}
+
+.room__section--info {
+    background-color: var(--Dark-green);
+    text-align: center;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.room__info {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.room__section--book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Utility classes for border radius */
+
+.border-radius-left {
+    border-radius: 3rem 0 0 3rem;
+}
+.border-radius-right {
+    border-radius: 0 3rem 3rem 0;
+}
+
+/* ------------- ALL MEDIA QUERIES ------------- */
 
 @media screen and (min-width: 768px) {
 
@@ -551,7 +575,6 @@ body {
 
     .wrapper__section--booking {
         align-items: flex-start;
-        min-height: 80vh;
     }
 
     .form {
