@@ -13,9 +13,9 @@
     <!-- HEADER -->
     <header class="header">
         <section class="header__section">
-            <img class="landscape-logo" src="../images/logo/bonz.ai-logo-color-landscape.png" alt="Logo: Neon green round symbol with text 'Bonz.ai'">
+            <a href="index.html"><img class="landscape-logo" src="../images/logo/bonz.ai-logo-color-landscape.png" alt="Logo: Neon green round symbol with text 'Bonz.ai'"></a>
             <nav class="header__menu">
-                <a class="menu__item menu__item--active" href="#">Home</a>
+                <a class="menu__item menu__item--active" href="index.html">Home</a>
                 <a class="menu__item" href="#">Contact</a>
                 <a class="menu__item" href="#">About</a>
             </nav>
@@ -23,7 +23,7 @@
         <section class="header__section">
             <button class="header__btn">
                 <img class="icon-arrow" src="../images/icons/arrow.svg" alt="">
-                <p class="menu__item">Booking</p>
+                <a href="booking.html"><p class="menu__item">Booking</p></a>
             </button>
             <button class="header__btn">
                 <svg class="search" width="29" height="29" viewBox="0 0 29 29" fill="none"
@@ -34,8 +34,7 @@
             </button>
 
             <button class="header__btn">
-                <svg class="mypage" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg class="mypage" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M23.0143 17.4H23.5785C24.7503 17.4003 25.8816 17.7877 26.76 18.4894C27.6383 19.1911 28.2032 20.1587 28.3485 21.2106L28.9753 25.7404C29.0316 26.1485 28.9914 26.5627 28.8573 26.9557C28.7231 27.3486 28.4982 27.7113 28.1973 28.0195C27.8964 28.3278 27.5264 28.5746 27.112 28.7437C26.6976 28.9127 26.2482 29.0001 25.7936 29H4.2064C3.7518 29.0001 3.30238 28.9127 2.88797 28.7437C2.47355 28.5746 2.10362 28.3278 1.80273 28.0195C1.50183 27.7113 1.27685 27.3486 1.14272 26.9557C1.00859 26.5627 0.968371 26.1485 1.02474 25.7404L1.64985 21.2106C1.79523 20.1582 2.36058 19.1902 3.23961 18.4884C4.11864 17.7867 5.25078 17.3996 6.42314 17.4H6.98574" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <circle cx="15" cy="8" r="7" stroke="white" stroke-width="2" />
                 </svg>
@@ -50,19 +49,15 @@
     </header>
     <!-- HERO -->
     <div class="hero">
-        <section class="hero__section">
+        <section class="hero__section hero__section--home">
             <h1 class="h1">Welcome</h1>
             <p class="p hero__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis mauris ac et, bibendum ut
                 velit viverra. In mattis nisi eget justo consequat a augue. </p>
             <!-- BUTTON -->
-            <button class="button">
-                <a class="button__link" href="">
-                Book Your Stay
-                <div class="button__hover-effect"></div></a>
-            </button>
+            <button class="button" onclick="document.location='booking.html'">Book Your Stay<div class="button__hover-effect"></div></button>
         </section>
     </div>
-    <main class="wrapper">
+    <main class="wrapper wrapper--home">
         <!-- CARD -->
         <article class="card">
             <section class="card__section">
@@ -134,7 +129,7 @@
 
         <section class="footer__section">
             <img class="footer-logo" src="../images/logo/bonz.ai-logo-white-landscape.png" alt="White Bonzai logo.">
-            <button class="footer__btn">Book your stay</button>
+            <button class="footer__btn" onclick="document.location='booking.html'">Book your stay</button>
         </section>
     </footer>
 

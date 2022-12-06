@@ -49,11 +49,12 @@ body {
     --fs-menu-item: 2.0rem;
     --ff-menu-item: 'Jura', sans-serif;
 
-    /* Styling button */
+    /* Styling button and label */
     --fs-btn: 2.4rem;
-    --ff-btn: 'Jura', sans-serif;
-    --fw-btn: 700;
-    --fs-btn--small: 2rem;
+    --fs-label: 1.8rem;
+    --ff-btn: 'Jura', sans-serif;   /* For btn and label */
+    --fw-btn: 700;                  /* For btn and label */
+    --fs-btn--small: 2rem;          /* For btn and label */
 }
 
 /* ------------- TEXT STYLING ------------- */
@@ -91,13 +92,14 @@ body {
 /* ------------- WRAPPER ------------- */
 
 .wrapper {
-    padding: 3rem 0;
+    padding-bottom: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 4rem;
     position: relative;
+    z-index: 1;
 }
 .wrapper::before {      /* To allow lower opacity of background img */
     content: '';
@@ -109,7 +111,13 @@ body {
     bottom: 0;
     left: 0;
     opacity: .5;
+    z-index: -1;
 }
+
+.wrapper--home {
+    padding-top: 3rem;
+}
+
 
 /* ------------- HERO / HEADER ------------- */
 
@@ -120,7 +128,7 @@ body {
     align-items: center;
     position: sticky; 
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .header__section,
@@ -170,11 +178,14 @@ body {
 }
 
 .hero__section {
-    margin-top: 10em;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4em;
+}
+
+.hero__section--home {
+    margin-top: 10em;
 }
 
 .hero__p {
@@ -269,6 +280,7 @@ body {
 .footer__btn:hover {
     background-color: var(--Dark-green);
     color: var(--Secondary-Color);
+    cursor: pointer;
 }
 
 /* ------------- CARD ------------- */
@@ -385,14 +397,10 @@ body {
     font-family: var(--ff-btn);
     font-size: var(--fs-btn);
     font-weight: var(--fw-btn);
-    border-radius: 5rem 0 5rem 0;
+    border-radius: 4rem 0 4rem;
     overflow: hidden;
     z-index: 1;
     position: relative;
-}
-
-.button__link {
-    color: var(--Dark-green);
 }
 
 .button__hover-effect {
@@ -420,6 +428,84 @@ body {
     scale: 3;
     opacity: .9;
 }
+
+/* ------------- ************ ------------- */
+/* ------------- BOOKING PAGE ------------- */
+/* ------------- ************ ------------- */
+
+.hero-img {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+.hero--booking {
+    padding: 1.2rem;
+    background-size: 100%;
+}
+
+/* ------------- FORM ------------- */
+
+.form {
+    padding: 1.2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2.4rem;
+    max-width: 70rem;
+}
+
+.form__section {
+    background-color: var(--Secondary-Color);
+    padding: 1.6rem 2rem;
+    border-radius: 3rem 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.form__section--big {
+    min-width: 28rem;
+}
+
+.form__section--small {
+    min-width: 18rem;
+    max-width: 28rem;
+    flex: 1;
+}
+
+.form__label {
+    font-family: var(--ff-btn);
+    font-size: var(--fs-label);
+    font-weight: var(--fw-btn);
+    color: var(--Dark-green);
+}
+
+.form__input {
+    border: none;
+    text-align: right;
+    color: var(--Primary-color);
+    font-family: var(--ff-btn);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.form__input--number {
+    width: 5rem;
+}
+
+.form__button {
+    font-size: 1.6rem;
+    min-width: 20rem;
+}
+
+.form__input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--Primary-color);
+}
+
+/* ------------- MEDIA QUERIES ------------- */
 
 @media screen and (min-width: 768px) {
 
@@ -453,5 +539,23 @@ body {
 
     .footer__section--icons {
         flex-direction: column;
+    }
+
+    /* Booking */
+    .h1--text-align,
+    .p--text-align {
+        text-align: left;
+    }
+
+    .form {
+        justify-content: flex-start;
+    }
+
+    .form__section {
+        flex-direction: column;
+    }
+
+    .form__input {
+        text-align: left;
     }
 }
