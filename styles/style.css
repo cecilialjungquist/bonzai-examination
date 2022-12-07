@@ -14,6 +14,12 @@ body {
     background-color: var(--Dark-purple);
 }
 
+header,
+main > * {
+    max-width: 1200px;
+    margin: auto;
+}
+
 :root {
     font-size: 62.5%;
 
@@ -77,6 +83,7 @@ body {
     font-size: var(--fs-paragraph);
     line-height: var(--lh-paragraph);
     color: var(--Secondary-Color);
+    max-width: 600px;
 }
 
 .p--card, 
@@ -88,11 +95,7 @@ body {
     margin: 1.5rem 0;
 }
 
-/* ------------- ************ ------------- */
-/* -------------  HOME  PAGE  ------------- */
-/* ------------- ************ ------------- */
-
-/* ------------- HERO / HEADER ------------- */
+/* ------------- HEADER ------------- */
 
 .header {
     padding: 1.2rem;
@@ -116,12 +119,13 @@ body {
 }
 
 .menu__item {
-    display: none;                  /* Ändra till display: inline; i media query*/
+    display: none;  /* See media query */
     font-size: var(--fs-menu-item);
     font-family: var(--ff-menu-item);
     color: var(--Secondary-Color);
 }
 
+/* To highlight current page */
 .menu__item--active {
     font-weight: 500;
 }
@@ -130,7 +134,7 @@ body {
     appearance: none;
     border: none;
     background-color: transparent;
-    display: none;                  /* Ändra till display: flex i media query*/
+    display: none;  /* See media query */
     align-items: center;
 }
 
@@ -140,34 +144,6 @@ body {
     transform: rotateZ(-90deg);
     transition: transform 1s;
 }
-
-.hero {
-    margin-top: -5.5rem;
-    padding: 1.2rem;
-    min-height: 100vh;
-    background-image: url(../images/09-night.jpg);
-    background-size: cover;
-    background-position: center right -32rem;
-}
-
-.hero__section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4em;
-}
-
-.hero__section--home {
-    margin-top: 10em;
-}
-
-.hero__p {
-    max-width: 70rem;
-    text-align: center;
-}
-
-
-/* Hover effects */
 
 .menu__item:hover,
 .header__btn:hover .menu__item {
@@ -190,6 +166,46 @@ body {
 
 .header__btn:hover .icon-arrow {
     transform: rotateZ(270deg);
+}
+
+/* ------------- HERO ------------- */
+
+.hero {
+    margin-top: -5.5rem;
+    padding: 1.2rem;
+    min-height: 100vh;
+    background-image: url(../images/09-night.jpg);
+    background-size: cover;
+    background-position: center right -32rem;
+}
+
+.hero__img--booking {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+.hero__img--about {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
+    object-position: 0% 75%;
+}
+
+.hero__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+}
+
+.hero__section--home {
+    margin-top: 10em;
+}
+
+.hero__p {
+    text-align: center;
 }
 
 /* ------------- BUTTON ------------- */
@@ -238,6 +254,7 @@ body {
 /* ------------- MAIN ------------- */
 
 .main {
+    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -259,9 +276,7 @@ body {
     z-index: -1;
 }
 
-/* ------------- CARD ------------- */
-
-.main__section--home {
+.main__section--cards {
     padding: 3rem 0;
     display: flex;
     flex-direction: row;
@@ -269,6 +284,41 @@ body {
     justify-content: center;
     gap: 4rem;
 }
+
+.main__section--booking {
+    padding: 3rem 1.2rem 6rem;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.main__section--rooms {
+    padding: 3rem 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.main__section--about {
+    width: 100%;
+    padding: 2rem 1.2rem; 
+}
+
+.main__section--our-crew {
+    width: 100%;
+    padding: 3rem 1.6rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* ------------- CARD ------------- */
 
 .card {
     max-width: 32rem;
@@ -304,7 +354,6 @@ body {
 }
 
 /* Modifiers for background img */
-
 .card__img-holder--our-rooms {
     background-image: url(../images/02-night.jpg);
 }
@@ -315,101 +364,15 @@ body {
     background-image: url(../images/mathias-arlund-8o8ZK7X9gVY-unsplash.jpg);
     background-position: center -4rem;
 }
+.card__img-holder--meet-the-crew {
+    background-image: url(../images/erhan-astam-yLcK3Itx6ok-unsplash.jpg);
+    background-position: right;
+}
 
 /* Hover effects */
-
 .card:hover .card__section {
     transform: scale(1.05);
     cursor: pointer;
-}
-
-/* ------------- FOOTER ------------- */
-
-.footer {
-    background-color: var(--Dark-green);
-    padding: 4rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 1.6rem;
-}
-
-.footer__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.6rem
-}
-.footer__section--icons {
-    flex-direction: row;
-}
-
-.footer__menu {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-}
-
-.footer-logo {
-    height: 2rem;
-}
-
-.footer__btn {
-    appearance: none;
-    border: none;
-    background-color: var(--Primary-color);
-    padding: .4em .8em;
-    border-radius: 1.6rem 0 1.6rem 0;
-    color: var(--Dark-green);
-    font-size: var(--fs-btn--small);
-    font-family: var(--ff-btn);
-    transition: background-color 500ms, color 500ms;
-}
-
-/* Hover effects */
-
-.spotify:hover,
-.pinterest:hover,
-.facebook:hover {
-    cursor: pointer;
-}
-
-.spotify:hover path,
-.pinterest:hover path,
-.facebook:hover path {
-    fill: var(--Primary-color);
-}
-
-.footer__btn:hover {
-    background-color: var(--Dark-green);
-    color: var(--Secondary-Color);
-    cursor: pointer;
-}
-
-
-/* ------------- ************ ------------- */
-/* ------------- BOOKING PAGE ------------- */
-/* ------------- ************ ------------- */
-
-/* ------------- HERO / MAIN ------------- */
-
-.booking-hero__img {
-    width: 100%;
-    max-height: 30rem;
-    object-fit: cover;
-    object-position: top;
-}
-
-.main__section--booking {
-    padding: 3rem 1.2rem 6rem;
-    max-width: 70rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
 }
 
 /* ------------- FORM ------------- */
@@ -467,20 +430,6 @@ body {
     border-bottom: 1px solid var(--Primary-color);
 }
 
-
-/* ------------- ************ ------------- */
-/* -------------  ROOMS PAGE  ------------- */
-/* ------------- ************ ------------- */
-
-.main__section--rooms {
-    padding: 3rem 1.2rem 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-}
-
 /* ------------- ROOM ------------- */
 
 .room {
@@ -508,15 +457,13 @@ body {
 }
 
 .room__section--info {
-    max-width: 650px;
     background-color: var(--Dark-green);
     text-align: center;
-    padding: 1.2rem;
+    padding: 3rem 1.2rem 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-
 
 .room__info {
     margin-top: auto;
@@ -532,12 +479,170 @@ body {
 }
 
 /* Utility classes for border radius */
-
 .border-radius-left {
     border-radius: 3rem 0 0 3rem;
 }
 .border-radius-right {
     border-radius: 0 3rem 3rem 0;
+}
+
+/* Green line styling */
+.vector {
+    background-color: var(--Primary-color);
+    height: 2px;
+    width: 80vw;
+    border-radius: 2px;
+}
+
+/* ------------- ABOUT ------------- */
+
+.about {
+    margin-top: 2rem;
+    background-color: var(--Dark-green);   
+    padding: 2rem;           /* Ändra till mer padding i media query */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* ------------- CREW MEMBER ------------- */
+/*            desktop view only            */
+
+.crew-member--big {
+    max-width: 100rem;
+}
+
+.crew-member--small {
+    max-width: 70rem;
+}
+
+.crew-member__section {
+    min-height: 32rem;
+    padding: 2rem 0;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.crew-member__img-holder {
+    min-width: 28rem;
+    min-height: 28rem;
+    border-radius: 50%;
+    background-color: var(--Primary-color);  /* IF the background-img wouldn't render */
+    background-size: cover;
+}
+
+.crew-member__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Modifiers for background img */
+.crew-member__img-holder--ceo {
+    min-width: 32rem;
+    min-height: 32rem;
+    background-image: url(../images/riku-lu-f50UNtxoeiI-unsplash.jpg);  
+    background-position: right top;
+}
+.crew-member__img-holder--receptionist {
+    background-image: url(../images/erhan-astam-yLcK3Itx6ok-unsplash.jpg);
+    background-position: right;
+}
+.crew-member__img-holder--cleaner {
+    background-image: url(../images/mathew-schwartz-td116npEPgQ-unsplash.jpg);
+    background-position: top;
+}
+.crew-member__img-holder--chef {
+    background-image: url(../images/barrington-ratliff-MVtjq6SnT1A-unsplash.jpg);   /* BB8 <3 */
+    background-position: bottom;
+}
+.crew-member__img-holder--customer-service-agent {
+    background-image: url(../images/alessio-soggetti-rSFxBGpnluw-unsplash.jpg);   
+    background-position: center;
+}
+
+/* Modifiers for flex direction */
+.crew-member__section--flex-reverse {
+    flex-direction: row-reverse;
+    background-image: linear-gradient(to left, transparent 15%, var(--Dark-green) 15%);
+}
+
+/* Modifiers for position */
+.crew-member--left-position {
+    background-image: linear-gradient(to right, transparent 15%, var(--Dark-green) 15%);
+    align-self: flex-start;
+}
+
+.crew-member--right-position {
+    align-self: flex-end;
+}
+
+/* ------------- FOOTER ------------- */
+
+.footer {
+    background-color: var(--Dark-green);
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem
+}
+.footer__section--icons {
+    flex-direction: row;
+}
+
+.footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.footer-logo {
+    height: 2rem;
+}
+
+.footer__btn {
+    appearance: none;
+    border: none;
+    background-color: var(--Primary-color);
+    padding: .4em .8em;
+    border-radius: 1.6rem 0 1.6rem 0;
+    color: var(--Dark-green);
+    font-size: var(--fs-btn--small);
+    font-family: var(--ff-btn);
+    transition: background-color 500ms, color 500ms;
+}
+
+/* Hover effects */
+.spotify:hover,
+.pinterest:hover,
+.facebook:hover {
+    cursor: pointer;
+}
+
+.spotify:hover path,
+.pinterest:hover path,
+.facebook:hover path {
+    fill: var(--Primary-color);
+}
+
+.footer__btn:hover {
+    background-color: var(--Dark-green);
+    color: var(--Secondary-Color);
+    cursor: pointer;
 }
 
 /* ------------- ALL MEDIA QUERIES ------------- */
@@ -606,8 +711,26 @@ body {
     }
 
     .room__section--info {
-        max-width: 800px;
         padding: 4rem;
         text-align: left; 
+    }
+
+    .room--2 {
+        flex-direction: row-reverse;
+        background-image: linear-gradient(to left, transparent 15%, var(--Dark-green) 15%);
+    }
+
+    .vector {
+        display: none;
+    }
+
+    /* About */
+
+    .main__section--our-crew {
+        display: flex;
+    }
+
+    .card--meet-the-crew {
+        display: none;
     }
 }
