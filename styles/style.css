@@ -88,29 +88,9 @@ body {
     margin: 1.5rem 0;
 }
 
-/* ------------- WRAPPER ------------- */
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    gap: 4rem;
-    z-index: 1;
-}
-.wrapper::before {      /* To allow lower opacity of background img */
-    content: '';
-    background-image: url(../images/ivana-cajina-asuyh-_ZX54-unsplash.jpg);
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: .5;
-    z-index: -1;
-}
+/* ------------- ************ ------------- */
+/* -------------  HOME  PAGE  ------------- */
+/* ------------- ************ ------------- */
 
 /* ------------- HERO / HEADER ------------- */
 
@@ -212,9 +192,76 @@ body {
     transform: rotateZ(270deg);
 }
 
+/* ------------- BUTTON ------------- */
+
+.button {
+    appearance: none;
+    border: none;
+    padding: 1.8rem 5rem;
+    background-color: var(--Primary-color);
+    color: var(--Dark-green);
+    font-family: var(--ff-btn);
+    font-size: var(--fs-btn);
+    font-weight: var(--fw-btn);
+    border-radius: 4rem 0 4rem;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.button__hover-effect {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: var(--Secondary-Color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    scale: 0;
+    opacity: 0;
+    transition: scale 1s, opacity 1s;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:hover .button__hover-effect {
+    scale: 3;
+    opacity: .9;
+}
+
+/* ------------- MAIN ------------- */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 4rem;
+    z-index: 1;
+}
+.main::before {      /* To allow lower opacity of background img */
+    content: '';
+    background-image: url(../images/ivana-cajina-asuyh-_ZX54-unsplash.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+    z-index: -1;
+}
+
 /* ------------- CARD ------------- */
 
-.wrapper__section--home {
+.main__section--home {
     padding: 3rem 0;
     display: flex;
     flex-direction: row;
@@ -341,54 +388,12 @@ body {
     cursor: pointer;
 }
 
-/* ------------- BUTTON ------------- */
-
-.button {
-    appearance: none;
-    border: none;
-    padding: 1.8rem 5rem;
-    background-color: var(--Primary-color);
-    color: var(--Dark-green);
-    font-family: var(--ff-btn);
-    font-size: var(--fs-btn);
-    font-weight: var(--fw-btn);
-    border-radius: 4rem 0 4rem;
-    overflow: hidden;
-    z-index: 1;
-    position: relative;
-}
-
-.button__hover-effect {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: var(--Secondary-Color);
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    scale: 0;
-    opacity: 0;
-    transition: scale 1s, opacity 1s;
-}
-
-.button:hover {
-    cursor: pointer;
-}
-
-.button:hover .button__hover-effect {
-    scale: 3;
-    opacity: .9;
-}
 
 /* ------------- ************ ------------- */
 /* ------------- BOOKING PAGE ------------- */
 /* ------------- ************ ------------- */
 
-/* ------------- HERO ------------- */
+/* ------------- HERO / MAIN ------------- */
 
 .booking-hero__img {
     width: 100%;
@@ -397,7 +402,7 @@ body {
     object-position: top;
 }
 
-.wrapper__section--booking {
+.main__section--booking {
     padding: 3rem 1.2rem 6rem;
     max-width: 70rem;
     display: flex;
@@ -467,9 +472,8 @@ body {
 /* -------------  ROOMS PAGE  ------------- */
 /* ------------- ************ ------------- */
 
-.wrapper__section--rooms {
+.main__section--rooms {
     padding: 3rem 1.2rem 6rem;
-    max-width: 70rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -482,6 +486,7 @@ body {
 .room {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -503,6 +508,7 @@ body {
 }
 
 .room__section--info {
+    max-width: 650px;
     background-color: var(--Dark-green);
     text-align: center;
     padding: 1.2rem;
@@ -511,19 +517,18 @@ body {
     gap: 2rem;
 }
 
+
 .room__info {
     margin-top: auto;
     display: flex;
     align-items: center;
+    gap: 4rem;
     justify-content: space-between;
+    text-align: left;
 }
 
-.room__section--book {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.room__btn {
+    align-self: center;
 }
 
 /* Utility classes for border radius */
@@ -587,5 +592,22 @@ body {
 
     .form__input {
         text-align: left;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    /* Rooms */
+
+    .room {
+        flex-direction: row;
+        gap: 0;
+        background-image: linear-gradient(to right, transparent 15%, var(--Dark-green) 15%);
+    }
+
+    .room__section--info {
+        max-width: 800px;
+        padding: 4rem;
+        text-align: left; 
     }
 }
