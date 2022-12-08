@@ -116,15 +116,53 @@ main > * {
     gap: 5vw;
 }
 
+.hamburger {
+    padding: 1.2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.hamburger__menu {
+    margin-top: 1.2rem;
+    background-color: rgba(36, 36, 46, 0.9);
+    border-radius: 2rem 0 2rem 2rem;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+    transform: translateX(150%);
+    transition: 1s;
+}
+
 .landscape-logo {
     height: 3rem;
 }
 
-.menu__item {
+.hamburger__input {
+    display: none;
+}
+
+.hamburger__input:checked ~ .hamburger__menu {
+    transform: translateX(0);
+}
+
+.menu__item,
+.menu__item--hamburger {
     display: none; 
     font-size: var(--fs-menu-item);
     font-family: var(--ff-menu-item);
     color: var(--Secondary-Color);
+}
+
+.menu__item--hamburger {
+    display: block;
 }
 
 /* To highlight current page */
@@ -616,7 +654,7 @@ main > * {
         display: flex;
     }
 
-    .hamburger {
+    .header__section--hamburger {
         display: none;  /* Removes the hamburger menu in favor of header__btn and menu__item */
     }
 
@@ -687,6 +725,7 @@ main > * {
 
 @media (hover: hover) {
     .menu__item:hover,
+    .menu__item--hamburger:hover,
     .header__btn:hover .menu__item {
         color: var(--Primary-color);
         cursor: pointer;
