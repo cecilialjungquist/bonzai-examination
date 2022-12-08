@@ -56,25 +56,25 @@
         <section class="main__section main__section--booking">
             <h1 class="h1">Booking</h1>
             <!-- FORM -->
-            <form class="form">
+            <form action="rooms.html" class="form">
                 <section class="form__section form__section--big">
                     <label class="form__label" for="check-in ">Check in</label>
-                    <input class="form__input" type="date" name="date" id="check-in">
+                    <input required class="form__input" type="date" name="date" id="check-in">
                 </section>
                 <section class="form__section form__section--big">
                     <label class="form__label" for="check-out">Check out</label>
-                    <input class="form__input" type="date" name="date" id="check-out">
+                    <input required class="form__input" type="date" name="date" id="check-out">
                 </section>
                 <section class="form__section form__section--small">
                     <label class="form__label" for="guests">Guests</label>
-                    <input class="form__input form__input--number" type="number" name="number" id="guests" value="1" max="6">
+                    <input required class="form__input form__input--number" type="number" name="number" id="guests" value="1" max="6">
                 </section>
                 <section class="form__section form__section--small">
                     <label class="form__label" for="rooms">Rooms</label>
-                    <input class="form__input form__input--number" type="number" name="number" id="rooms" value="1" max="4">
+                    <input required class="form__input form__input--number" type="number" name="number" id="rooms" value="1" max="4">
                 </section>
                 <!-- BUTTON -->
-                <button class="button" type="button" onclick="document.location='rooms.html'">Search<div class="button__hover-effect"></div></button>
+                <button class="button" type="submit">Search<div class="button__hover-effect"></div></button>
             </form>
         </section>
     </main>

@@ -21,7 +21,7 @@ main > * {
 }
 
 :root {
-    font-size: 62.5%;
+    font-size: 46.5%;
 
     /* Colors */
     --Primary-color: #54E9BC;
@@ -33,9 +33,6 @@ main > * {
     --fs-h1: 9.6rem;
     --ff-h1: 'Jura', sans-serif;
     --fw-h1: 500;
-
-    /* Styling Heading 1 for mobile */
-    --fs-h1--mobile: 6.4rem;
 
     /* Styling Heading 2 */
     --fs-h2: 3.6rem;
@@ -67,9 +64,14 @@ main > * {
 
 .h1 {
     font-family: var(--ff-h1);
-    font-size: var(--fs-h1--mobile);
+    font-size: var(--fs-h1);
     color: var(--Secondary-Color);
     font-weight: var(--fw-h1);
+    margin-bottom: 2rem;
+}
+
+.h1--text-align-center {
+    text-align: center;
 }
 
 .h2 {
@@ -119,7 +121,7 @@ main > * {
 }
 
 .menu__item {
-    display: none;  /* See media query */
+    display: none; 
     font-size: var(--fs-menu-item);
     font-family: var(--ff-menu-item);
     color: var(--Secondary-Color);
@@ -128,13 +130,14 @@ main > * {
 /* To highlight current page */
 .menu__item--active {
     font-weight: 500;
+    color: var(--Primary-color);
 }
 
-.header__btn {
+.header__btn { 
     appearance: none;
     border: none;
     background-color: transparent;
-    display: none;  /* See media query */
+    display: none; 
     align-items: center;
 }
 
@@ -145,46 +148,23 @@ main > * {
     transition: transform 1s;
 }
 
-.menu__item:hover,
-.header__btn:hover .menu__item {
-    color: var(--Primary-color);
-    cursor: pointer;
-}
-
-.header__btn:hover {
-    cursor: pointer;
-}
-
-.header__btn:hover .search path {
-    fill: var(--Primary-color); 
-}
-
-.header__btn:hover .mypage path,
-.header__btn:hover .mypage circle {
-    stroke: var(--Primary-color); 
-}
-
-.header__btn:hover .icon-arrow {
-    transform: rotateZ(270deg);
-}
-
 /* ------------- HERO ------------- */
 
 .hero--home {
-    margin-top: -5.5rem;
+    margin-top: -6rem;
     padding: 1.2rem;
     min-height: 100vh;
     background-image: url(../images/09-night.jpg);
     background-size: cover;
-    background-position: center right -32rem;
+    background-position: center right -44rem;
 }
 
 .hero__section--home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 9em;
-    margin-top: 6em;
+    gap: 7rem;
+    margin-top: 7.5rem;
     text-align: center;
 }
 
@@ -236,19 +216,10 @@ main > * {
     transition: scale 1s, opacity 1s;
 }
 
-.button:hover {
-    cursor: pointer;
-}
-
-.button:hover .button__hover-effect {
-    scale: 3;
-    opacity: .9;
-}
-
 /* ------------- MAIN ------------- */
 
 .main {
-    padding: 4rem 1.2rem;
+    padding: 4rem 1.2rem 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -271,7 +242,6 @@ main > * {
 }
 
 .main__section {
-    /* padding: 2rem 0; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -283,6 +253,7 @@ main > * {
 }
 
 .main__section--booking {
+    padding-bottom: 8rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -358,16 +329,6 @@ main > * {
     background-image: url(../images/mike-kiev-Opzk_hvwO9Q-unsplash.jpg);
 }
 
-/* Hover effects */
-.card:hover .card__section {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.card:hover .h2 {
-    color: var(--Primary-color);
-}
-
 /* ------------- ROOM ------------- */
 
 .room {
@@ -397,7 +358,7 @@ main > * {
 .room__section--info {
     background-color: var(--Dark-green);
     text-align: center;
-    padding: 3rem 1.2rem 3rem;
+    padding: 4rem 2rem 6rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -424,7 +385,7 @@ main > * {
     border-radius: 0 3rem 3rem 0;
 }
 
-/* Green line styling */
+/* Green line and dots styling */
 .vector {
     background-color: var(--Primary-color);
     height: 2px;
@@ -432,11 +393,28 @@ main > * {
     border-radius: 2px;
 }
 
+.dot {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    border: 2px solid var(--Primary-color);
+    margin: 3rem 0;
+}
+
+.dot--active {
+    background-color: var(--Primary-color);
+}
+
+.dot:hover {
+    background-color: var(--Primary-color);
+    cursor: pointer;
+}
+
 /* ------------- FORM ------------- */
 
 .form {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     justify-content: center;
     gap: 2.4rem;
     max-width: 70rem;
@@ -452,13 +430,12 @@ main > * {
 }
 
 .form__section--big {
-    min-width: 28rem;
+    min-width: 30rem;
 }
 
 .form__section--small {
     min-width: 18rem;
-    max-width: 28rem;
-    flex: 1;
+    max-width: 30rem;
 }
 
 .form__label {
@@ -491,7 +468,7 @@ main > * {
 .about {
     flex: 1;
     background-color: var(--Dark-green);   
-    padding: 2rem 1.2rem;           /* Ändra till mer padding i media query */
+    padding: 4rem 2rem 6rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -591,6 +568,7 @@ main > * {
     justify-content: center;
     align-items: center;
     gap: 1.6rem
+
 }
 .footer__section--icons {
     flex-direction: row;
@@ -603,7 +581,7 @@ main > * {
 }
 
 .footer-logo {
-    height: 2rem;
+    height: 3rem;
 }
 
 .footer__btn {
@@ -618,28 +596,13 @@ main > * {
     transition: background-color 500ms, color 500ms;
 }
 
-/* Hover effects */
-.spotify:hover,
-.pinterest:hover,
-.facebook:hover {
-    cursor: pointer;
-}
-
-.spotify:hover path,
-.pinterest:hover path,
-.facebook:hover path {
-    fill: var(--Primary-color);
-}
-
-.footer__btn:hover {
-    background-color: var(--Dark-green);
-    color: var(--Secondary-Color);
-    cursor: pointer;
-}
-
 /* ------------- ALL MEDIA QUERIES ------------- */
 
 @media screen and (min-width: 768px) {
+
+    :root {
+        font-size: 62.5%;
+    }
 
     .header {
         position: static;   /* Removes sticky header */
@@ -657,16 +620,12 @@ main > * {
         display: none;  /* Removes the hamburger menu in favor of header__btn and menu__item */
     }
 
-    .h1 {
-        font-size: var(--fs-h1);
-    }
-
     .hero--home {
-        background-position: center;
+        background-position: left;
     }
 
     .form {
-        justify-content: flex-start;
+        flex-flow: row wrap;
     }
 
     .form__section {
@@ -675,10 +634,6 @@ main > * {
 
     .form__input {
         text-align: left;
-    }
-
-    .about {
-        padding: 4rem 2rem 6rem;
     }
 
     .footer {
@@ -697,6 +652,10 @@ main > * {
         margin-left: 10rem;
     }
 
+    .form {
+        justify-content: flex-start;
+    }
+
     .room {
         flex-direction: row;
         gap: 0;
@@ -704,8 +663,8 @@ main > * {
     }
 
     .room__section--info {
-        padding: 4rem;
         text-align: left; 
+        padding: 4rem;
     }
 
     .room--2 {
@@ -724,4 +683,67 @@ main > * {
     .card--meet-the-crew {
         display: none;
     }
+}
+
+@media (hover: hover) {
+    .menu__item:hover,
+    .header__btn:hover .menu__item {
+        color: var(--Primary-color);
+        cursor: pointer;
+    }
+
+    .header__btn:hover {
+        cursor: pointer;
+    }
+
+    .header__btn:hover .search path {
+        fill: var(--Primary-color); 
+    }
+
+    .header__btn:hover .mypage path,
+    .header__btn:hover .mypage circle {
+        stroke: var(--Primary-color); 
+    }
+
+    .header__btn:hover .icon-arrow {
+        transform: rotateZ(270deg);
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
+    
+    .button:hover .button__hover-effect {
+        scale: 3;
+        opacity: .9;
+    }
+
+    .card:hover .card__section {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    .card:hover .h2 {
+        color: var(--Primary-color);
+    }
+
+    .footer__btn:hover {
+        background-color: var(--Dark-green);
+        color: var(--Secondary-Color);
+        cursor: pointer;
+    }
+
+    .spotify:hover,
+    .pinterest:hover,
+    .facebook:hover {
+        cursor: pointer;
+    }
+
+    .spotify:hover path,
+    .pinterest:hover path,
+    .facebook:hover path {
+        fill: var(--Primary-color);
+    }
+
+
 }
