@@ -248,7 +248,7 @@ main > * {
 /* ------------- MAIN ------------- */
 
 .main {
-    padding-bottom: 4rem;
+    padding: 4rem 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -271,7 +271,7 @@ main > * {
 }
 
 .main__section {
-    padding: 3rem 0;
+    /* padding: 2rem 0; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -339,7 +339,8 @@ main > * {
 .card__img-holder--our-rooms {
     background-image: url(../images/02-night.jpg);
 }
-.card__img-holder--our-facilities {
+.card__img-holder--our-facilities,
+.card__img-holder--spa {
     background-image: url(../images/huum-NHLS5hOSH0c-unsplash.jpg);
 }
 .card__img-holder--contact-us {
@@ -350,11 +351,21 @@ main > * {
     background-image: url(../images/erhan-astam-yLcK3Itx6ok-unsplash.jpg);
     background-position: right;
 }
+.card__img-holder--conference-rooms {
+    background-image: url(../images/dom-fou-YRMWVcdyhmI-unsplash.jpg);
+}
+.card__img-holder--rent-a-ship {
+    background-image: url(../images/mike-kiev-Opzk_hvwO9Q-unsplash.jpg);
+}
 
 /* Hover effects */
 .card:hover .card__section {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.card:hover .h2 {
+    color: var(--Primary-color);
 }
 
 /* ------------- ROOM ------------- */
@@ -424,7 +435,6 @@ main > * {
 /* ------------- FORM ------------- */
 
 .form {
-    padding: 1.2rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -480,9 +490,8 @@ main > * {
 
 .about {
     flex: 1;
-    margin-top: 2rem;
     background-color: var(--Dark-green);   
-    padding: 2rem;           /* Ändra till mer padding i media query */
+    padding: 2rem 1.2rem;           /* Ändra till mer padding i media query */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -656,11 +665,6 @@ main > * {
         background-position: center;
     }
 
-    .main__section--booking {
-        align-items: flex-start;
-        margin-left: 10rem;
-    }
-
     .form {
         justify-content: flex-start;
     }
@@ -673,6 +677,10 @@ main > * {
         text-align: left;
     }
 
+    .about {
+        padding: 4rem 2rem 6rem;
+    }
+
     .footer {
         flex-direction: row;
     }
@@ -683,6 +691,11 @@ main > * {
 }
 
 @media screen and (min-width: 1000px) {
+
+    .main__section--booking {
+        align-items: flex-start;
+        margin-left: 10rem;
+    }
 
     .room {
         flex-direction: row;
