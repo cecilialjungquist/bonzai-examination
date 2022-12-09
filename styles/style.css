@@ -97,7 +97,7 @@ main > * {
     margin: 1.5rem 0;
 }
 
-/* ------------- HEADER ------------- */
+/* ------------- HEADER + MENU + HAMBURGER MENU ------------- */
 
 .header {
     padding: 1.2rem;
@@ -116,6 +116,10 @@ main > * {
     gap: 5vw;
 }
 
+.landscape-logo {
+    height: 3rem;
+}
+
 .hamburger {
     padding: 1.2rem;
     position: absolute;
@@ -129,8 +133,7 @@ main > * {
 }
 
 .hamburger__menu {
-    margin-top: 1.2rem;
-    background-color: rgba(36, 36, 46, 0.9);
+    background-color: var(--Primary-color);
     border-radius: 2rem 0 2rem 2rem;
     padding: 3rem 2rem;
     display: flex;
@@ -141,16 +144,16 @@ main > * {
     transition: 1s;
 }
 
-.landscape-logo {
-    height: 3rem;
-}
-
 .hamburger__input {
     display: none;
 }
 
 .hamburger__input:checked ~ .hamburger__menu {
     transform: translateX(0);
+}
+
+.hamburger__icon {
+    width: 3rem;
 }
 
 .menu__item,
@@ -163,6 +166,7 @@ main > * {
 
 .menu__item--hamburger {
     display: block;
+    font-weight: 700;
 }
 
 /* To highlight current page */
@@ -204,6 +208,11 @@ main > * {
     gap: 7rem;
     margin-top: 7.5rem;
     text-align: center;
+}
+
+.hero__btn {
+    animation: fade-in 3s linear 1500ms forwards;
+    opacity: 0;
 }
 
 .hero__img {
@@ -283,6 +292,7 @@ main > * {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 4rem
 }
 
@@ -293,20 +303,15 @@ main > * {
 .main__section--booking {
     padding-bottom: 8rem;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .main__section--rooms {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .main__section--our-crew {
     display: none;
     flex-direction: column;
-    align-items: center;
 }
 
 /* ------------- CARD ------------- */
@@ -501,6 +506,19 @@ main > * {
     border-bottom: 1px solid var(--Primary-color);
 }
 
+/* Styling round img */
+.round-image {
+    display: none;
+    object-fit: cover;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: -15rem;
+    right: 15vw;
+}
+
 /* ------------- ABOUT ------------- */
 
 .about {
@@ -542,6 +560,7 @@ main > * {
 }
 
 .crew-member__info {
+    padding: 0 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -634,6 +653,17 @@ main > * {
     transition: background-color 500ms, color 500ms;
 }
 
+/* ------------- KEYFRAMES ------------- */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* ------------- ALL MEDIA QUERIES ------------- */
 
 @media screen and (min-width: 768px) {
@@ -687,11 +717,15 @@ main > * {
 
     .main__section--booking {
         align-items: flex-start;
-        margin-left: 10rem;
+        margin-left: 15vw;
     }
 
     .form {
         justify-content: flex-start;
+    }
+
+    .round-image {
+        display: block;
     }
 
     .room {
