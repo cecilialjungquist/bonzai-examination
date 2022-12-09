@@ -4,6 +4,7 @@
 Skolprojekt, examination av HTMl och CSS HT 2022. 
 
 Länk till skiss: https://www.figma.com/file/9UbJ6LoomFcpjwi0si9ept/Bonz.ai?node-id=0%3A1&t=ROijCoyQqSjAzCJC-1
+
 Länk till ny mobilversion: https://www.figma.com/file/t7KV2kgV9pBwX8wj7aLKKo/bonz.ai-mobile?node-id=0%3A1&t=ummHX01kuV7fiMzQ-3
 
 ## Bakgrund
