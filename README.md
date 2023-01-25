@@ -1,7 +1,7 @@
 # bonzai-examination
 
 **Kommentar**
-Skolprojekt, examination av HTMl och CSS HT 2022. 
+Skolprojekt, examination av HTML och CSS HT 2022. 
 
 Länk till skiss: https://www.figma.com/file/9UbJ6LoomFcpjwi0si9ept/Bonz.ai?node-id=0%3A1&t=ROijCoyQqSjAzCJC-1
 
